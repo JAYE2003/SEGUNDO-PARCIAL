@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h2>Listado de Personas</h2>
+  <ul>
+    {% for persona in object_list %}
+      <li>{{ persona.nombres }} {{ persona.apellidos }} - <a href="{% url 'persona_update' persona.pk %}">Editar</a> | <a href="{% url 'persona_delete' persona.pk %}">Eliminar</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'persona_create' %}">Agregar Persona</a>
+{% endblock %}

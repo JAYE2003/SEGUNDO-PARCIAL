@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h2>¿Seguro que deseas eliminar a {{ object.nombres }} {{ object.apellidos }}?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+  </form>
+  <a href="{% url 'mascota_list' %}">Cancelar</a>
+{% endblock %}
